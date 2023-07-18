@@ -280,12 +280,8 @@ public class Navigation extends AppCompatActivity implements OnMapReadyCallback 
 
                         // Add a marker for the user's location
                         // Move the camera to the user's location
-                        try {
-                            googleMap.addMarker(new MarkerOptions().position(userLatLng).title("You are here").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-                            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLatLng, 15));}
-                        catch (Exception e) {}
-
-
+                        addUserMarker(userLatLng);
+                        moveCamera(userLatLng);
 
                         // Update the help requests count
                         updateHelpRequestsCount();
@@ -440,7 +436,7 @@ public class Navigation extends AppCompatActivity implements OnMapReadyCallback 
     private void acceptCall() {
         isUserAcceptingCall = true;
         distressCallListView.setVisibility(View.GONE);
-       // helpRequestsButton.setImageResource(R.drawable.not_selected);
+        // helpRequestsButton.setImageResource(R.drawable.not_selected);
         distressCallAdapter.clear();
         currentDistressCall.setAccepted(true);
         distressCallsRef.child(currentDistressCall.getId()).setValue(currentDistressCall);

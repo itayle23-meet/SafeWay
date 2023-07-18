@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -23,9 +22,9 @@ public class Profile extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        ImageButton Settings = findViewById(R.id.SettingsBtn);
-        ImageButton Nav = findViewById(R.id.NavBtn);
-        ImageButton Profile = findViewById(R.id.ProfileBtn);
+        Button Settings = findViewById(R.id.SettingsBtn);
+        Button Nav = findViewById(R.id.NavBtn);
+        Button Profile = findViewById(R.id.ProfileBtn);
 
         Button LogOut = findViewById(R.id.LogOutBtn);
 
@@ -39,7 +38,7 @@ public class Profile extends AppCompatActivity {
         Settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Profile.this,Settings.class);
+                Intent i = new Intent(Profile.this, Settings.class);
                 startActivity(i);
             }
         });
@@ -47,7 +46,7 @@ public class Profile extends AppCompatActivity {
         Nav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Profile.this,Navigation.class);
+                Intent i = new Intent(Profile.this, Navigation.class);
                 startActivity(i);
             }
         });
@@ -55,7 +54,7 @@ public class Profile extends AppCompatActivity {
         Profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Profile.this,Profile.class);
+                Intent i = new Intent(Profile.this, Profile.class);
                 startActivity(i);
             }
         });

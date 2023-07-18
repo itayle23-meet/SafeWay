@@ -9,9 +9,9 @@ import android.widget.Button;
 
 public class Home extends AppCompatActivity {
 
-    private Button settings_btn;
-    private Button location_btn;
-    private Button profile_btn;
+    Button settings_btn;
+    Button location_btn;
+    Button profile_btn;
 
 
     @Override
@@ -36,10 +36,11 @@ public class Home extends AppCompatActivity {
         settings_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Home.this, Settings.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(Home.this, Settings.class);
+                startActivity(intent1);
             }
         });
+
 
         //on click to navigation
         location_btn.setOnClickListener(new View.OnClickListener() {

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/light_sand">
@@ -34,14 +33,43 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Walk with me" />
+        android:layout_width="250dp"
+        android:layout_height="134dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/rounded_rectangle"
+        android:paddingStart="25dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="25dp"
+        android:paddingBottom="15dp"
+        android:text="Walk with me!"
+        android:textSize="25sp"
+        android:textColor="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- filler -->
-    <TextView android:layout_height="0dip"
-        android:layout_width="fill_parent"
-        android:layout_weight="1" />
+<!--    &lt;!&ndash; filler &ndash;&gt;-->
+<!--    <TextView android:layout_height="0dip"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_weight="1" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="317dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".listactiv">
+
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="600dp" />
+
+
+    </LinearLayout>
 
 
 <!--    the down pannel-->
@@ -50,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="85dp"
         android:background="@drawable/navbar_layout"
-        android:gravity="center"
+        android:gravity="bottom"
         android:minHeight="85dp">
         <!-- filler -->
         <View

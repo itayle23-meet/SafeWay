@@ -5,18 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Settings">
+    android:gravity="bottom"
+    android:background="@color/light_sand">
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/hellotxt"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/MainBgColor_Darker"
-        android:gravity="center"
-        android:textSize="60dp"
-        android:layout_weight="1"
-        android:text="Settings to be made" />
+        android:layout_height="wrap_content"
+        android:text="Hello" />
+
 
     <LinearLayout
         android:id="@+id/bottomLayout"
@@ -25,41 +23,52 @@
         android:background="@drawable/navbar_layout"
         android:gravity="center"
         android:minHeight="85dp">
+    <!-- filler -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1" />
 
-        <ImageButton
-            android:id="@+id/SettingsBtn"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/selected"
-            android:padding="1dp"
-            android:contentDescription="settings button"
-            android:scaleType="fitCenter"
-            android:src="@drawable/settings" />
+    <Button
+        android:id="@+id/SettingsBtn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_weight="0"
+        android:background="@drawable/settings" />
+    <!-- filler -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1" />
 
-        <ImageButton
-            android:id="@+id/NavBtn"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/not_selected"
-            android:padding="1dp"
-            android:contentDescription="navigation button"
-            android:scaleType="fitCenter"
-            android:src="@drawable/nav_icon" />
 
-        <ImageButton
-            android:id="@+id/ProfileBtn"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/not_selected"
-            android:padding="1dp"
-            android:scaleType="fitCenter"
-            android:contentDescription="profile button"
-            android:src="@drawable/profile_pic" />
+    <Button
+        android:id="@+id/NavBtn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_weight="0"
+        android:background="@drawable/location" />
+    <!-- filler -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1" />
 
-    </LinearLayout>
+
+    <Button
+        android:id="@+id/ProfileBtn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_weight="0"
+        android:background="@drawable/profile" />
+    <!-- filler -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1" />
+
+</LinearLayout>
+
 
 
 </LinearLayout>

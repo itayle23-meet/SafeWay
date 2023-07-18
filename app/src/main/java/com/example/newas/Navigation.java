@@ -237,7 +237,7 @@ public class Navigation extends AppCompatActivity implements OnMapReadyCallback 
                             LatLng destinationLatLng = new LatLng(address.getLatitude(), address.getLongitude());
                             addDestinationMarker(destinationLatLng);
                             showRouteToDestination(destinationLatLng);
-                            hideDistressCalls();
+                            //hideDistressCalls();
                         } else {
                             Toast.makeText(Navigation.this, "Destination not found", Toast.LENGTH_SHORT).show();
                         }
@@ -364,6 +364,8 @@ public class Navigation extends AppCompatActivity implements OnMapReadyCallback 
         }
         if (geoApiContext == null) {
             geoApiContext = new GeoApiContext.Builder().apiKey(getString(R.string.Map_API_Key)).build();
+        }else{
+            Toast.makeText(Navigation.this, "geoApiContext == null", Toast.LENGTH_SHORT).show();
         }
         DirectionsApiRequest directionsApiRequest = new DirectionsApiRequest(geoApiContext);
         directionsApiRequest.alternatives(false);
@@ -375,6 +377,8 @@ public class Navigation extends AppCompatActivity implements OnMapReadyCallback 
                 if (result.routes != null && result.routes.length > 0) {
                     DirectionsRoute route = result.routes[0];
                     addRoutePolyline(route.overviewPolyline);
+                }else{
+                    Toast.makeText(Navigation.this, "problem with onresult", Toast.LENGTH_SHORT).show();
                 }
             }
 

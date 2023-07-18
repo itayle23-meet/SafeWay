@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.graphics.Paint;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/MainBgColor"
+    android:background="@color/light_sand"
     tools:context=".SignUp">
 
 
@@ -17,6 +17,7 @@
         android:gravity="center"
         android:text="Sign Up"
         android:textSize="30dp"
+        android:textColor="@color/blue"
         android:textStyle="bold" />
 
     <Space

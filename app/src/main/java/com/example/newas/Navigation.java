@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -237,7 +238,7 @@ public class Navigation extends AppCompatActivity implements OnMapReadyCallback 
                             LatLng destinationLatLng = new LatLng(address.getLatitude(), address.getLongitude());
                             addDestinationMarker(destinationLatLng);
                             showRouteToDestination(destinationLatLng);
-                            hideDistressCalls();
+                            //hideDistressCalls();
                         } else {
                             Toast.makeText(Navigation.this, "Destination not found", Toast.LENGTH_SHORT).show();
                         }
@@ -364,26 +365,38 @@ public class Navigation extends AppCompatActivity implements OnMapReadyCallback 
         }
         if (geoApiContext == null) {
             geoApiContext = new GeoApiContext.Builder().apiKey(getString(R.string.Map_API_Key)).build();
+        } else {
+            Toast.makeText(Navigation.this, "geoApiContext == null", Toast.LENGTH_SHORT).show();
         }
-        DirectionsApiRequest directionsApiRequest = new DirectionsApiRequest(geoApiContext);
-        directionsApiRequest.alternatives(false);
-        directionsApiRequest.origin(new com.google.maps.model.LatLng(userLatLng.latitude, userLatLng.longitude));
-        directionsApiRequest.destination(new com.google.maps.model.LatLng(destinationLatLng.latitude, destinationLatLng.longitude));
-        directionsApiRequest.setCallback(new PendingResult.Callback<DirectionsResult>() {
+
+        // Create an AsyncTask to perform the directions API request
+        AsyncTask<LatLng, Void, DirectionsResult> directionsTask = new AsyncTask<LatLng, Void, DirectionsResult>() {
             @Override
-            public void onResult(DirectionsResult result) {
-                if (result.routes != null && result.routes.length > 0) {
-                    DirectionsRoute route = result.routes[0];
-                    addRoutePolyline(route.overviewPolyline);
+            protected DirectionsResult doInBackground(LatLng... latLngs) {
+                DirectionsApiRequest directionsApiRequest = new DirectionsApiRequest(geoApiContext);
+                directionsApiRequest.alternatives(false);
+                directionsApiRequest.origin(new com.google.maps.model.LatLng(userLatLng.latitude, userLatLng.longitude));
+                directionsApiRequest.destination(new com.google.maps.model.LatLng(latLngs[0].latitude, latLngs[0].longitude));
+                try {
+                    return directionsApiRequest.await();
+                } catch (Exception e) {
+                    return null;
                 }
             }
 
             @Override
-            public void onFailure(Throwable e) {
-                Log.e(TAG, "Failed to get directions: " + e.getMessage(), e);
-                Toast.makeText(Navigation.this, "Failed to get directions", Toast.LENGTH_SHORT).show();
+            protected void onPostExecute(DirectionsResult directionsResult) {
+                if (directionsResult != null && directionsResult.routes != null && directionsResult.routes.length > 0) {
+                    DirectionsRoute route = directionsResult.routes[0];
+                    addRoutePolyline(route.overviewPolyline);
+                } else {
+                    Toast.makeText(Navigation.this, "Failed to get directions", Toast.LENGTH_SHORT).show();
+                }
             }
-        });
+        };
+
+        // Execute the AsyncTask
+        directionsTask.execute(destinationLatLng);
     }
 
     private void addRoutePolyline(EncodedPolyline polyline) {

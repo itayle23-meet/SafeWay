@@ -37,14 +37,18 @@
         android:layout_width="match_parent"
         android:layout_height="576dp">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/map_container"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="match_parent"
-            android:layout_height="580dp"
-            android:layout_weight="1"
-            tools:context=".Navigation"
-            tools:layout="@layout/activity_map" />
+<!--        <androidx.fragment.app.FragmentContainerView-->
+<!--            android:id="@+id/map_container"-->
+<!--            android:name="com.google.android.gms.maps.SupportMapFragment"-->
+<!--            android:layout_width="match_parent"-->
+<!--<<<<<<< HEAD-->
+<!--            android:layout_height="580dp"-->
+<!--=======-->
+<!--            android:layout_height="570dp"-->
+<!--&gt;>>>>>> f5ec0807a991ebfd55f7fc4fdc4b6756c7236696-->
+<!--            android:layout_weight="1"-->
+<!--            tools:context=".Navigation"-->
+<!--            tools:layout="@layout/activity_map" />-->
 
         <TextView
             android:id="@+id/userCountTextView"
@@ -80,7 +84,8 @@
                     android:contentDescription="view help request button"
                     android:padding="6dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/help" />
+                    android:src="@drawable/help"
+                    android:visibility="visible"/>
 
                 <TextView
                     android:id="@+id/helpReqCounter"

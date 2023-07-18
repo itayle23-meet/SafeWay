@@ -171,7 +171,7 @@ public class SignUp extends AppCompatActivity {
 
                             Log.d("main", "on complete in create user");
 
-                            Intent I = new Intent(SignUp.this, Navigation.class);
+                            Intent I = new Intent(SignUp.this, Home.class);
                             startActivity(I);
                         } else {
                             Toast.makeText(SignUp.this, "Auth Failed", Toast.LENGTH_SHORT).show();
@@ -188,7 +188,7 @@ public class SignUp extends AppCompatActivity {
             case PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     locationPermissionGranted = true;
-                    Intent intent = new Intent(SignUp.this, Navigation.class);
+                    Intent intent = new Intent(SignUp.this, Home.class);
                     startActivity(intent);
                 }
             }

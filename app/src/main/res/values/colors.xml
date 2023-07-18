@@ -15,4 +15,12 @@
     <color name="Turquoise">#9ed2c6</color>
     <color name="LightBlue">#53bab9</color>
 
+    <color name="light_sand">#f8ecde</color>
+    <color name="sand">#eadac1</color>
+    <color name="light_blue">#9ed2c6</color>
+    <color name="blue">#52bab9</color>
+
+    <color name="button_color">#FF4081</color>
+
+
 </resources>

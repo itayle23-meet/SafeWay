@@ -41,7 +41,7 @@
             android:id="@+id/map_container"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="580dp"
             android:layout_weight="1"
             tools:context=".Navigation"
             tools:layout="@layout/activity_map" />
@@ -157,4 +157,58 @@
             android:src="@drawable/profile_pic" />
 
     </LinearLayout>
+
+    <!--    the down pannel-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/bottomLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="85dp"-->
+<!--        android:background="@drawable/navbar_layout"-->
+<!--        android:gravity="center"-->
+<!--        android:minHeight="85dp">-->
+<!--        &lt;!&ndash; filler &ndash;&gt;-->
+<!--        <View-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_weight="1" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/SettingsBtn"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:layout_weight="0"-->
+<!--            android:background="@drawable/settings" />-->
+<!--        &lt;!&ndash; filler &ndash;&gt;-->
+<!--        <View-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_weight="1" />-->
+
+
+<!--        <Button-->
+<!--            android:id="@+id/NavBtn"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:layout_weight="0"-->
+<!--            android:background="@drawable/location" />-->
+<!--        &lt;!&ndash; filler &ndash;&gt;-->
+<!--        <View-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_weight="1" />-->
+
+
+<!--        <Button-->
+<!--            android:id="@+id/ProfileBtn"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:layout_weight="0"-->
+<!--            android:background="@drawable/profile" />-->
+<!--        &lt;!&ndash; filler &ndash;&gt;-->
+<!--        <View-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_weight="1" />-->
+
+<!--    </LinearLayout>-->
 </LinearLayout>
